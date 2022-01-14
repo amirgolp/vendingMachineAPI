@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "e0fb0536-7f44-41b4-b688-20a64c822294",
+		"name": "vendorMachine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users & Auth",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"amir\",\r\n    \"password\": \"123456\",\r\n    \"deposit\": 20022\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get auth user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFlMTE3YWNmYjM5YjFjZGJlNGJhN2ZhIn0sImlhdCI6MTY0MjE0MTYxMywiZXhwIjoxNjQyNTAxNjEzfQ.WnxxOoNlOcsLWOfm-xwQH7fyP1Lx4Lp8Tg7joqyZyhY",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/auth",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFlMTE3YWNmYjM5YjFjZGJlNGJhN2ZhIn0sImlhdCI6MTY0MjE0MTYxMywiZXhwIjoxNjQyNTAxNjEzfQ.WnxxOoNlOcsLWOfm-xwQH7fyP1Lx4Lp8Tg7joqyZyhY",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"amir\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/auth",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deposit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFlMTE3YWNmYjM5YjFjZGJlNGJhN2ZhIn0sImlhdCI6MTY0MjE3OTM3NiwiZXhwIjoxNjQyNTM5Mzc2fQ.rQ4xyPKQyV1HRN4obAUho_58tZR9sNdZf_JLhGyDfzk",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deposit\": 500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/deposit",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"deposit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Create or Update Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFlMTE3YWNmYjM5YjFjZGJlNGJhN2ZhIn0sImlhdCI6MTY0MjE0MTYxMywiZXhwIjoxNjQyNTAxNjEzfQ.WnxxOoNlOcsLWOfm-xwQH7fyP1Lx4Lp8Tg7joqyZyhY",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\": \"Book2\",\r\n    \"AmountAvailable\": 7,\r\n    \"price\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/products",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/products",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFlMWE1MTgyZWZhYTNjM2VjZjFjMTQzIn0sImlhdCI6MTY0MjE3NzgxNiwiZXhwIjoxNjQyNTM3ODE2fQ.FpE6H3IGFO5JEZ0V0zgZFguHis6N8_uiVVFriY6uLI8",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\": \"Book3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/products",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "nginx Test Route",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/test",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/buy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "JSON Type",
+						"type": "text"
+					},
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFlMTE3YWNmYjM5YjFjZGJlNGJhN2ZhIn0sImlhdCI6MTY0MjE3OTM3NiwiZXhwIjoxNjQyNTM5Mzc2fQ.rQ4xyPKQyV1HRN4obAUho_58tZR9sNdZf_JLhGyDfzk",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productNames\": [\"Book\", \"Book2\"],\r\n    \"amount\": [1,2]\r\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/buy",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"buy"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
