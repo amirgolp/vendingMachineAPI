@@ -92,14 +92,14 @@ router.delete('/', auth, async (req, res) => {
 // @access   Private
 router.delete('/:username', auth, async (req, res) => {
     const username = req.params.username;
-    console.log(username)
-    // try {
-    //     // Remove user
-    //     await User.findOneAndRemove({ _id: req.user.id });
-    //     res.json({ msg: 'user removed'})
-    // } catch (err) {
-    //     res.status(500).json({ msg: err })
-    // }
+
+    try {
+        // Remove user
+        await User.findOneAndRemove({ username });
+        res.json({ msg: 'user removed'})
+    } catch (err) {
+        res.status(500).json({ msg: err })
+    }
 });
 
 module.exports = router;
